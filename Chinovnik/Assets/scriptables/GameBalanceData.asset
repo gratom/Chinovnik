@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41468cc3ee741c58e190a9c0cb1adbc, type: 3}
+  m_Name: GameBalanceData
+  m_EditorClassIdentifier: 
+  corruptionByLevelChance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 10
+      inSlope: 0.15151516
+      outSlope: 0.15151516
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 25
+      inSlope: 0.15151516
+      outSlope: 0.15151516
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  corruptionByLevelMultiplier:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.4949495
+      outSlope: 0.4949495
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 50
+      inSlope: 0.4949495
+      outSlope: 0.4949495
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  corruptionMin: 20
+  corruptionMax: 50
+  corruptionAdditionValue: 30
+  salaryByLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 5.040404
+      outSlope: 5.040404
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 500
+      inSlope: 5.040404
+      outSlope: 5.040404
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxDemocracyByLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 200
+      inSlope: 98.9899
+      outSlope: 98.9899
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 10000
+      inSlope: 98.9899
+      outSlope: 98.9899
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxCorruptionByLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 5
+      inSlope: 5
+      outSlope: 5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 500
+      inSlope: 5
+      outSlope: 5
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  leveling:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 50
+      inSlope: 18.111277
+      outSlope: 18.111277
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.05141845
+    - serializedVersion: 3
+      time: 100
+      value: 1000
+      inSlope: 3.2113051
+      outSlope: 3.2113051
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.056737572
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  problems:
+  - valueRandAppear: 0
+    mainText: 
+    democracySolve: []
+    corruptionSolve: []
+    pointsNeeds: 0
+    penaltyLevel: 0
+    penaltyMoney: 0
+  - valueRandAppear: 0
+    mainText: 
+    democracySolve: []
+    corruptionSolve: []
+    pointsNeeds: 0
+    penaltyLevel: 0
+    penaltyMoney: 0
