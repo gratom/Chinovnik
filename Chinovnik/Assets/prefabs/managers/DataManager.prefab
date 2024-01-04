@@ -53,4 +53,8 @@ MonoBehaviour:
         democracy: 1
         corruption: 1
         documentsTotal: 0
+      problemData:
+        problemIndex: 0
+        pointsNeeds: 0
+        basePoints: 0
       currentStageData: 0

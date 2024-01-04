@@ -24,10 +24,14 @@ namespace Global.Managers.Datas
         [SerializeField] private AnimationCurve maxCorruptionByLevel;
 
         [SerializeField] private AnimationCurve leveling;
+        [SerializeField] private AnimationCurve problemMultiplier;
+
+        public int eventChance;
 
         #region problems
 
-        [SerializeField] private List<ProblemStaticData> problems;
+        public List<ProblemStaticData> problems;
+        public float ProblemMultiplier => problemMultiplier.Evaluate(Level);
 
         #endregion
 
@@ -56,6 +60,22 @@ namespace Global.Managers.Datas
                 return 0;
             }
             return (int)(corruptionByLevelMultiplier.Evaluate(Level) * (Random.Range(corruptionMin, corruptionMax) + Random.Range(0, Corruption)));
+        }
+
+        public int GetNewEventID()
+        {
+            int sum = problems.Sum(x => x.valueRandAppear);
+            int rand = Random.Range(0, sum);
+            sum = 0;
+            for (int i = 0; i < problems.Count; i++)
+            {
+                sum += problems[i].valueRandAppear;
+                if (rand <= sum)
+                {
+                    return i;
+                }
+            }
+            return 0;
         }
     }
 }

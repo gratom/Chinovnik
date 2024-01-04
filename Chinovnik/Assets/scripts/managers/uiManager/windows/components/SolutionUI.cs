@@ -1,4 +1,5 @@
 ﻿using System;
+using Global;
 using Global.Managers.Datas;
 using Tools;
 using UnityEngine;
@@ -10,17 +11,19 @@ public class SolutionUI : RectComponent
     [SerializeField] private Text textCost;
     [SerializeField] private Text textMoneyCost;
     [SerializeField] private Text pointsMinMax;
+    [SerializeField] private Button button;
 
-    private int index;
+    [SerializeField] private bool isCorruption;
 
-    public void Set(ProblemSolveVariant solveVariant, int index)
+    private float multiplier => Services.GetManager<DataManager>().StaticData.Balance.ProblemMultiplier;
+
+    public void Set(ProblemSolveVariant solveVariant, bool enable)
     {
         description.text = solveVariant.text;
-        textCost.gameObject.SetActive(solveVariant.cost > 0);
-        textCost.text = solveVariant.cost > 0 ? solveVariant.ToString() : "";
-        textMoneyCost.gameObject.SetActive(solveVariant.moneyCost > 0);
-        textMoneyCost.text = solveVariant.moneyCost > 0 ? solveVariant.ToString() : "";
-        pointsMinMax.text = solveVariant.pointsMin + "-" + solveVariant.pointsMax;
+        textCost.text = ((int)(solveVariant.cost * (isCorruption ? multiplier : 1))).ToString();
+        textMoneyCost.text = ((int)(solveVariant.moneyCost * multiplier)).ToString();
+        pointsMinMax.text = (int)(solveVariant.pointsMin * multiplier) + "-" + (int)(solveVariant.pointsMax * multiplier);
+        button.interactable = enable;
     }
 
 }

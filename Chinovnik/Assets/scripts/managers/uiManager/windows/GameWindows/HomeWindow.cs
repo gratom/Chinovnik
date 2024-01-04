@@ -42,7 +42,10 @@ namespace Global.Managers.Game
         protected override void OnShow()
         {
             SetValuesFromData();
-            StartCoroutine(MainLifeCycle());
+            if (Services.GetManager<GameManager>().CurrentGame.currentStageData == GameData.GameStage.home)
+            {
+                StartCoroutine(MainLifeCycle());
+            }
         }
 
         public void PressYes()
@@ -70,6 +73,11 @@ namespace Global.Managers.Game
         private IEnumerator MainLifeCycle()
         {
             LockButtons();
+            if (game.documentsTotal > 50 && Random.Range(0, 100) < balance.eventChance)
+            {
+                Services.GetManager<GameManager>().GotoStage(GameData.GameStage.problem);
+                yield break;
+            }
             currentCorruption = balance.GetNewMoneyCorruption();
             document.ShowNew(currentCorruption);
             currentLawDecision = Random.Range(0, 100) > 50;
@@ -91,7 +99,7 @@ namespace Global.Managers.Game
                 if (currentCorruption > 0)
                 {
                     game.corruption = Mathf.Clamp(game.corruption - 1, 0, game.corruption);
-                    game.democracy = Mathf.Clamp(game.democracy + 1, 0, balance.MaxDemocracy);
+                    game.democracy = Mathf.Clamp(game.democracy + 2 + (int)(game.democracy * 0.1f) + (int)(balance.MaxDemocracy * 0.02f), 0, balance.MaxDemocracy);
                 }
             }
             else

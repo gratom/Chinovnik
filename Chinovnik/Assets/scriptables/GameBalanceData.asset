@@ -42,26 +42,26 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.4949495
-      outSlope: 0.4949495
-      tangentMode: 34
+      inSlope: 3.0272284
+      outSlope: 3.0272284
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.010699662
     - serializedVersion: 3
       time: 100
-      value: 50
-      inSlope: 0.4949495
-      outSlope: 0.4949495
-      tangentMode: 34
+      value: 200
+      inSlope: 0.40197137
+      outSlope: 0.40197137
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.052304894
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  corruptionMin: 20
-  corruptionMax: 50
+  corruptionMin: 10
+  corruptionMax: 35
   corruptionAdditionValue: 30
   salaryByLevel:
     serializedVersion: 2
@@ -69,17 +69,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 5.040404
-      outSlope: 5.040404
+      inSlope: 2.010101
+      outSlope: 2.010101
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 100
-      value: 500
-      inSlope: 5.040404
-      outSlope: 5.040404
+      value: 200
+      inSlope: 2.010101
+      outSlope: 2.010101
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -159,18 +159,104 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  problemMultiplier:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.4949495
+      outSlope: 0.4949495
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 50
+      inSlope: 0.4949495
+      outSlope: 0.4949495
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  eventChance: 5
   problems:
-  - valueRandAppear: 0
-    mainText: 
-    democracySolve: []
-    corruptionSolve: []
-    pointsNeeds: 0
-    penaltyLevel: 0
-    penaltyMoney: 0
-  - valueRandAppear: 0
-    mainText: 
-    democracySolve: []
-    corruptionSolve: []
-    pointsNeeds: 0
-    penaltyLevel: 0
+  - valueRandAppear: 50
+    mainText: "\u0421\u0443\u0434"
+    democracySolve:
+    - text: "\u041F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u0438\u0442\u044C \u0440\u0435\u0447\u044C"
+      cost: 5
+      moneyCost: 0
+      pointsMin: 3
+      pointsMax: 7
+    - text: "\u041D\u0430\u043D\u044F\u0442\u044C \u0430\u0434\u0432\u043E\u043A\u0430\u0442\u0430"
+      cost: 20
+      moneyCost: 100
+      pointsMin: 10
+      pointsMax: 13
+    - text: "\u041C\u0438\u0442\u0438\u043D\u0433 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u043A\u0438"
+      cost: 60
+      moneyCost: 50
+      pointsMin: 17
+      pointsMax: 25
+    corruptionSolve:
+    - text: "\u041F\u043E\u0434\u043C\u0438\u0433\u043D\u0443\u0442\u044C \u0441\u0443\u0434\u044C\u0435"
+      cost: 1
+      moneyCost: 0
+      pointsMin: 2
+      pointsMax: 10
+    - text: "\u041F\u043E\u0434\u043A\u0443\u043F\u0438\u0442\u044C \u0441\u0443\u0434\u044C\u044E"
+      cost: 3
+      moneyCost: 200
+      pointsMin: 11
+      pointsMax: 18
+    - text: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u0434\u0435\u043B\u043E"
+      cost: 5
+      moneyCost: 500
+      pointsMin: 40
+      pointsMax: 50
+    pointsNeeds: 45
+    penaltyLevel: 1
+    penaltyMoney: 200
+  - valueRandAppear: 50
+    mainText: "\u0412\u044B\u0431\u043E\u0440\u044B"
+    democracySolve:
+    - text: "\u041A\u0440\u0430\u0441\u0438\u0432\u043E \u043E\u0434\u0435\u0442\u044C\u0441\u044F"
+      cost: 5
+      moneyCost: 10
+      pointsMin: 3
+      pointsMax: 6
+    - text: "\u041E\u0440\u0433\u0430\u043D\u0438\u0437\u043E\u0432\u0430\u0442\u044C
+        \u0434\u0435\u0431\u0430\u0442\u044B"
+      cost: 15
+      moneyCost: 50
+      pointsMin: 10
+      pointsMax: 15
+    - text: "\u0412\u044B\u0431\u043E\u0440\u043D\u0430\u044F \u043A\u0430\u043C\u043F\u0430\u043D\u0438\u044F"
+      cost: 40
+      moneyCost: 200
+      pointsMin: 25
+      pointsMax: 35
+    corruptionSolve:
+    - text: "\u0420\u0430\u0437\u0434\u0430\u0442\u044C \u0433\u0440\u0435\u0447\u043A\u0443"
+      cost: 1
+      moneyCost: 200
+      pointsMin: 10
+      pointsMax: 15
+    - text: "\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u0438\u0435 \u0432\u0431\u0440\u043E\u0441\u044B"
+      cost: 5
+      moneyCost: 400
+      pointsMin: 18
+      pointsMax: 23
+    - text: "\u041F\u0435\u0440\u0435\u043F\u0438\u0441\u0430\u0442\u044C \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B"
+      cost: 8
+      moneyCost: 2000
+      pointsMin: 60
+      pointsMax: 100
+    pointsNeeds: 80
+    penaltyLevel: 2
     penaltyMoney: 0

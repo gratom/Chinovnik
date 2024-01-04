@@ -25,6 +25,7 @@ namespace Global.Managers.Game
 
         private static void OnStageHomeLoad(GameData gameData)
         {
+            Services.GetManager<UIManager>().HideWindow<ProblemWindow>();
             Services.GetManager<UIManager>().ShowWindow<HomeWindow>();
         }
 
