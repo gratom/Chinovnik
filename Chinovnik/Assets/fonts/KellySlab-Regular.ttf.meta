@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2521187baeb21ca4eb0b40d228196871
+guid: 3c0d0a84b9def1943add4b36f581d536
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - MindFields
+  - Kelly Slab
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

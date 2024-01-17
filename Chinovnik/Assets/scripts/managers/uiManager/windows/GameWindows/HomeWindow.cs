@@ -22,9 +22,14 @@ namespace Global.Managers.Game
         [SerializeField] private Text moneyText;
         [SerializeField] private Document document;
         [SerializeField] private Text advice;
+        [SerializeField] private Text singText;
+        [SerializeField] private Text singObject;
 
         [SerializeField] private GameObject newLevelWindow;
-
+        [SerializeField] private GameObject eventWin;
+        [SerializeField] private GameObject eventLose;
+        [SerializeField] private Text eventLoseLevel;
+        [SerializeField] private Text eventLoseMoney;
 
         protected override Type WindowType => typeof(HomeWindow);
 
@@ -73,7 +78,7 @@ namespace Global.Managers.Game
         private IEnumerator MainLifeCycle()
         {
             LockButtons();
-            if (game.documentsTotal > 50 && Random.Range(0, 100) < balance.eventChance)
+            if (game.documentsTotal > 50 - game.level * 5 && Random.Range(0, 100) < balance.eventChance)
             {
                 Services.GetManager<GameManager>().GotoStage(GameData.GameStage.problem);
                 yield break;
@@ -82,7 +87,8 @@ namespace Global.Managers.Game
             document.ShowNew(currentCorruption);
             currentLawDecision = Random.Range(0, 100) > 50;
             advice.text = "По закону вы должны поставить " + (currentLawDecision ? "YES" : "NO");
-            yield return new WaitForSeconds(1);
+            singText.text = "Чиновник " + game.level + " звания,\nОтдел подписания важных документов\n\n_________________";
+            yield return new WaitForSeconds(0.7f);
             UnlockButtons();
         }
 
@@ -118,17 +124,17 @@ namespace Global.Managers.Game
             {
                 game.level++;
                 game.documentsTotal = 0;
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.1f);
                 newLevelWindow.SetActive(true);
             }
 
             advice.text = "";
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             document.Hide();
-            SetValuesFromData();
 
             yield return new WaitForSeconds(0.6f);
+            SetValuesFromData();
             StartCoroutine(MainLifeCycle());
         }
 
@@ -141,6 +147,20 @@ namespace Global.Managers.Game
             corruptionBar.Percent = balance.CorruptionPercent;
             corruptionBar.Text = game.corruption.ToString();
             moneyText.text = game.money.ToString();
+        }
+
+        public void EventLog(bool result)
+        {
+            if (result)
+            {
+                eventWin.SetActive(true);
+            }
+            else
+            {
+                eventLose.SetActive(true);
+                eventLoseLevel.text = "-" + balance.problems[data.DynamicData.GameData.problemData.problemIndex].penaltyLevel;
+                eventLoseMoney.text = "-" + (int)(balance.problems[data.DynamicData.GameData.problemData.problemIndex].penaltyMoney * balance.ProblemMultiplier);
+            }
         }
     }
 }

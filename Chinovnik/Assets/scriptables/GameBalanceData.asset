@@ -140,21 +140,21 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 1
-      value: 50
-      inSlope: 18.111277
-      outSlope: 18.111277
+      value: 70
+      inSlope: 13.008157
+      outSlope: 13.008157
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.05141845
+      outWeight: 0.058313176
     - serializedVersion: 3
       time: 100
-      value: 1000
-      inSlope: 3.2113051
-      outSlope: 3.2113051
+      value: 500
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.056737572
+      inWeight: 0.07301808
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -165,20 +165,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.4949495
-      outSlope: 0.4949495
-      tangentMode: 34
+      inSlope: 0.71766835
+      outSlope: 0.71766835
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.092198595
     - serializedVersion: 3
       time: 100
-      value: 50
-      inSlope: 0.4949495
-      outSlope: 0.4949495
-      tangentMode: 34
+      value: 70
+      inSlope: 0.6081577
+      outSlope: 0.6081577
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.053191446
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -207,21 +207,21 @@ MonoBehaviour:
     - text: "\u041F\u043E\u0434\u043C\u0438\u0433\u043D\u0443\u0442\u044C \u0441\u0443\u0434\u044C\u0435"
       cost: 1
       moneyCost: 0
-      pointsMin: 2
-      pointsMax: 10
+      pointsMin: 3
+      pointsMax: 12
     - text: "\u041F\u043E\u0434\u043A\u0443\u043F\u0438\u0442\u044C \u0441\u0443\u0434\u044C\u044E"
       cost: 3
       moneyCost: 200
-      pointsMin: 11
-      pointsMax: 18
+      pointsMin: 15
+      pointsMax: 27
     - text: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u0434\u0435\u043B\u043E"
       cost: 5
-      moneyCost: 500
-      pointsMin: 40
-      pointsMax: 50
-    pointsNeeds: 45
+      moneyCost: 700
+      pointsMin: 50
+      pointsMax: 70
+    pointsNeeds: 70
     penaltyLevel: 1
-    penaltyMoney: 200
+    penaltyMoney: 1000
   - valueRandAppear: 50
     mainText: "\u0412\u044B\u0431\u043E\u0440\u044B"
     democracySolve:
@@ -240,23 +240,23 @@ MonoBehaviour:
       cost: 40
       moneyCost: 200
       pointsMin: 25
-      pointsMax: 35
+      pointsMax: 45
     corruptionSolve:
     - text: "\u0420\u0430\u0437\u0434\u0430\u0442\u044C \u0433\u0440\u0435\u0447\u043A\u0443"
       cost: 1
-      moneyCost: 200
-      pointsMin: 10
-      pointsMax: 15
+      moneyCost: 250
+      pointsMin: 12
+      pointsMax: 18
     - text: "\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u0438\u0435 \u0432\u0431\u0440\u043E\u0441\u044B"
-      cost: 5
-      moneyCost: 400
-      pointsMin: 18
-      pointsMax: 23
+      cost: 4
+      moneyCost: 500
+      pointsMin: 20
+      pointsMax: 30
     - text: "\u041F\u0435\u0440\u0435\u043F\u0438\u0441\u0430\u0442\u044C \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B"
-      cost: 8
-      moneyCost: 2000
-      pointsMin: 60
-      pointsMax: 100
-    pointsNeeds: 80
+      cost: 6
+      moneyCost: 3000
+      pointsMin: 70
+      pointsMax: 110
+    pointsNeeds: 110
     penaltyLevel: 2
     penaltyMoney: 0

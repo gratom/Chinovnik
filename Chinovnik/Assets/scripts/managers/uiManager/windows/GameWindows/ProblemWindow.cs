@@ -97,18 +97,19 @@ public class ProblemWindow : BaseCloseableWindow
     {
         if (data.basePoints >= data.pointsNeeds)
         {
-            Services.GetManager<UIManager>().HideWindow<ProblemWindow>();
             Services.GetManager<GameManager>().GotoStage(GameData.GameStage.home);
+            Services.GetManager<UIManager>().GetWindow<HomeWindow>().EventLog(true);
         }
         else
         {
             homeData.level = Mathf.Clamp(homeData.level - balance.problems[data.problemIndex].penaltyLevel, 0, homeData.level);
-            homeData.money -= balance.problems[data.problemIndex].penaltyMoney;
+            homeData.money -= (int)(balance.problems[data.problemIndex].penaltyMoney * multiplier);
             if (homeData.money < 0)
             {
                 homeData.money = 0;
             }
             Services.GetManager<GameManager>().GotoStage(GameData.GameStage.home);
+            Services.GetManager<UIManager>().GetWindow<HomeWindow>().EventLog(false);
         }
     }
 

@@ -11,6 +11,7 @@ public class Document : RectComponent
     [SerializeField] private GameObject moneyCorruptionGO;
     [SerializeField] private Image stampYes;
     [SerializeField] private Image stampNo;
+    [SerializeField] private Text singObj;
 
     [SerializeField] private float defaultStampRot;
 
@@ -31,6 +32,7 @@ public class Document : RectComponent
     {
         stampYes.gameObject.SetActive(false);
         stampNo.gameObject.SetActive(false);
+        singObj.gameObject.SetActive(false);
     }
 
     public void SetDecision(bool decision)
@@ -39,5 +41,6 @@ public class Document : RectComponent
         stampNo.transform.rotation = Quaternion.Euler(new Vector3(0, 0, defaultStampRot + Random.Range(-10, 10)));
         stampYes.gameObject.SetActive(decision);
         stampNo.gameObject.SetActive(!decision);
+        singObj.gameObject.SetActive(true);
     }
 }
