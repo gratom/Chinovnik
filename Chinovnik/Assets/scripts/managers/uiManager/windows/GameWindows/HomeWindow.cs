@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Global.Components.UserInterface;
 using Tools;
 using UnityEngine;
@@ -31,6 +32,8 @@ namespace Global.Managers.Game
         [SerializeField] private Text eventLoseLevel;
         [SerializeField] private Text eventLoseMoney;
 
+        [SerializeField] private List<ShoppingItem> shoppingItems;
+
         protected override Type WindowType => typeof(HomeWindow);
 
         private DataManager data => Services.GetManager<DataManager>();
@@ -46,6 +49,11 @@ namespace Global.Managers.Game
 
         protected override void OnShow()
         {
+            foreach (ShoppingItem item in shoppingItems)
+            {
+                item.SetFromData();
+            }
+
             SetValuesFromData();
             if (Services.GetManager<GameManager>().CurrentGame.currentStageData == GameData.GameStage.home)
             {

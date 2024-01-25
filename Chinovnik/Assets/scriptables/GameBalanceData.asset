@@ -260,3 +260,24 @@ MonoBehaviour:
     pointsNeeds: 110
     penaltyLevel: 2
     penaltyMoney: 0
+  shopItems:
+  - items:
+    - cost: 0
+      description: 
+      sprite: {fileID: 0}
+    - cost: 0
+      description: 
+      sprite: {fileID: 0}
+    - cost: 0
+      description: 
+      sprite: {fileID: 0}
+  - items:
+    - cost: 0
+      description: 
+      sprite: {fileID: 0}
+    - cost: 0
+      description: 
+      sprite: {fileID: 0}
+    - cost: 0
+      description: 
+      sprite: {fileID: 0}

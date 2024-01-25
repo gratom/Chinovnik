@@ -16,6 +16,10 @@ namespace Global.Managers.Datas
         public int corruption = 1;
         public int documentsTotal;
 
+        public int[] selectedShopItems;
+
+        public List<bool[]> purchased;
+
         #region public functions
 
         public void PostInit()

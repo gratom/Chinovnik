@@ -53,6 +53,7 @@ MonoBehaviour:
         democracy: 1
         corruption: 1
         documentsTotal: 0
+        selectedShopItems: 
       problemData:
         problemIndex: 0
         pointsNeeds: 0

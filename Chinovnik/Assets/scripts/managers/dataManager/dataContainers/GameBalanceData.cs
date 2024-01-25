@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 //Данные игрового баланса, такие как ингридиенты, свойства ингридиентов, названия, описания
 //Варочные котлы, и тд. Настройки сеток, жидкостей и тд.
@@ -31,6 +32,7 @@ namespace Global.Managers.Datas
         #region problems
 
         public List<ProblemStaticData> problems;
+        public List<ShopPositionData> shopItems;
         public float ProblemMultiplier => problemMultiplier.Evaluate(Level);
 
         #endregion
@@ -78,4 +80,5 @@ namespace Global.Managers.Datas
             return 0;
         }
     }
+
 }
