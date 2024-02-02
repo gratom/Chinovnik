@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Global.Components.UserInterface;
+using Global.Managers.UserInterface;
 using Tools;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,15 +50,20 @@ namespace Global.Managers.Game
 
         protected override void OnShow()
         {
-            foreach (ShoppingItem item in shoppingItems)
-            {
-                item.SetFromData();
-            }
+            UpdateShoppingItems();
 
             SetValuesFromData();
             if (Services.GetManager<GameManager>().CurrentGame.currentStageData == GameData.GameStage.home)
             {
                 StartCoroutine(MainLifeCycle());
+            }
+        }
+
+        public void UpdateShoppingItems()
+        {
+            foreach (ShoppingItem item in shoppingItems)
+            {
+                item.SetFromData();
             }
         }
 
@@ -170,5 +176,11 @@ namespace Global.Managers.Game
                 eventLoseMoney.text = "-" + (int)(balance.problems[data.DynamicData.GameData.problemData.problemIndex].penaltyMoney * balance.ProblemMultiplier);
             }
         }
+
+        public void OpenShop()
+        {
+            Services.GetManager<UIManager>().ShowWindow<ShopWindow>();
+        }
+
     }
 }

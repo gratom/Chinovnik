@@ -18,7 +18,7 @@ namespace Global.Managers.Datas
 
         public int[] selectedShopItems;
 
-        public List<bool[]> purchased;
+        public List<PurchasedData> purchased;
 
         #region public functions
 
@@ -30,4 +30,9 @@ namespace Global.Managers.Datas
         #endregion
     }
 
+    [Serializable]
+    public class PurchasedData
+    {
+        public bool[] data;
+    }
 }

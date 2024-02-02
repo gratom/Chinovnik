@@ -8,6 +8,8 @@ namespace Global.Managers.Datas
     [Serializable]
     public class GameData
     {
+        public bool isInited = false;
+
         public HomeStageData homeData = new HomeStageData();
         public ProblemStageData problemData = new ProblemStageData();
 

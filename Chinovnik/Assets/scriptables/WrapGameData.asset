@@ -13,10 +13,22 @@ MonoBehaviour:
   m_Name: WrapGameData
   m_EditorClassIdentifier: 
   gameData:
+    isInited: 1
     homeData:
       money: 0
       level: 1
       democracy: 50
       corruption: 0
       documentsTotal: 0
+      selectedShopItems: 0000000000000000000000000000000000000000
+      purchased:
+      - data: 01000000
+      - data: 01000000
+      - data: 01000000
+      - data: 01000000
+      - data: 01000000
+    problemData:
+      problemIndex: 0
+      pointsNeeds: 0
+      basePoints: 0
     currentStageData: 0

@@ -21,7 +21,8 @@ public class ShoppingItem : MonoBehaviour
 
     public void SetFromData()
     {
-        shopItem.enabled = data.selectedShopItems[id] != 0;
-        shopItem.sprite = balance.shopItems[id].items[data.selectedShopItems[id]].sprite;
+        //shopItem.enabled = data.selectedShopItems[id] != 0;
+        int dataID = data.selectedShopItems[id];
+        shopItem.sprite = balance.shopItems[id].items[dataID].sprite;
     }
 }

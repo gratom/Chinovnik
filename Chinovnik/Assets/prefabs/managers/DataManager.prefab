@@ -47,6 +47,7 @@ MonoBehaviour:
   staticData: {fileID: 11400000, guid: 6bfccdfa7b9c84642ac578c54562130f, type: 2}
   dynamicData:
     gameData:
+      isInited: 0
       homeData:
         money: 0
         level: 1
@@ -54,6 +55,7 @@ MonoBehaviour:
         corruption: 1
         documentsTotal: 0
         selectedShopItems: 
+        purchased: []
       problemData:
         problemIndex: 0
         pointsNeeds: 0

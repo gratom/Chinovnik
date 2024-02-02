@@ -33,7 +33,7 @@ namespace Global.Managers
 
         public void ContinueGame()
         {
-            if (Services.GetManager<DataManager>().DynamicData.GameData == null)
+            if (!Services.GetManager<DataManager>().DynamicData.GameData.isInited)
             {
                 Debug.Log("data is null. create new");
                 Services.GetManager<DataManager>().DynamicData.GameData = Services.GetManager<DataManager>().StaticData.DefaultGameData.GetCopyOfData();
