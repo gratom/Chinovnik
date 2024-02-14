@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Global.Components.UserInterface;
 using Global.Managers.Datas;
+using Global.Managers.UserInterface;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,19 +52,20 @@ namespace Global.Managers.Game
 
         public void SetShopArea()
         {
-            foreach (ShopItemUI itemUI in content)
+            int counter = 0;
+            for (int i = 0; i < balance.shopItems.Count; i++)
             {
-                Destroy(itemUI.gameObject);
-            }
-            content = new List<ShopItemUI>();
-
-            foreach (ShopPositionData shopPositionData in balance.shopItems)
-            {
-                foreach (ShopItemData item in shopPositionData.items)
+                ShopPositionData shopPositionData = balance.shopItems[i];
+                for (int j = 0; j < shopPositionData.items.Count; j++)
                 {
-                    ShopItemUI itemUI = Instantiate(prefab, contentParent.transform);
-                    itemUI.SetData(item, shopPositionData, OnBuy, OnSelect);
-                    content.Add(itemUI);
+                    ShopItemData item = shopPositionData.items[j];
+                    if (content.Count <= counter)
+                    {
+                        ShopItemUI itemUI = Instantiate(prefab, contentParent.transform);
+                        content.Add(itemUI);
+                    }
+                    content[counter].SetData(item, shopPositionData, OnBuy, OnSelect);
+                    counter++;
                 }
             }
         }
@@ -83,7 +85,9 @@ namespace Global.Managers.Game
             content.First(x => x.ID == id && x.InnerID == innerID).UpdateData(item, balance.shopItems[id]);
 
             //update ShoppingItems
-
+            UpdateShoppingItems();
+            UpdateData();
+            Services.GetManager<UIManager>().GetWindow<HomeWindow>().UpdateShoppingItems();
         }
 
         public void OnSelect(int id, int innerID)
@@ -95,6 +99,10 @@ namespace Global.Managers.Game
 
             //update
             content.First(x => x.ID == id && x.InnerID == innerID).UpdateData(item, balance.shopItems[id]);
+
+            UpdateShoppingItems();
+            UpdateData();
+            Services.GetManager<UIManager>().GetWindow<HomeWindow>().UpdateShoppingItems();
         }
 
     }
