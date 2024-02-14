@@ -282,7 +282,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6339857934888181102}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5206396623747760908}
+        m_TargetAssemblyTypeName: Global.Managers.Game.ShopItemUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6077909041299317804
 GameObject:
   m_ObjectHideFlags: 0
